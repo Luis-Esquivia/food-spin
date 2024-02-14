@@ -42,12 +42,10 @@ main {
 }
 
 nav {
-  width: 100%;
-  height: 100px;
-  display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
   align-items: center;
-  padding: 0px 30px;
 }
 
 .dish-price {
@@ -113,6 +111,7 @@ button {
   align-items: center;
   justify-content: center;
   gap: 6px;
+  margin: 10px 0 5px 0;
 }
 
 .nav__icon {
@@ -128,6 +127,13 @@ button {
 .nav__title {
   font-weight: 500;
   font-size: 18px;
+  display: none;
+}
+
+.nav__links-responsive {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10px;
 }
 
 .nav__links {
@@ -135,16 +141,16 @@ button {
   list-style-type: none;
   display: flex;
   justify-content: center;
-  margin-left: -250px;
 }
 
 .nav__links li {
-  margin: 0 30px;
+  margin: 0 10px;
 }
 
 .nav__shopper {
   position: relative;
   align-self: stretch flex-end;
+  margin-right: 10px;
 }
 
 .nav__shopper__badge {
@@ -180,8 +186,8 @@ button {
   position: fixed;
   width: 1200px;
   height: 1117px;
-  right: -10%;
-  top: -85%;
+  right: -95%;
+  top: -84%;
   border-radius: 50%;
   z-index: -1;
   clip-path: circle();
@@ -189,8 +195,8 @@ button {
 }
 
 .spinner__wheel {
-  width: 510px;
-  height: 510px;
+  width: 410px;
+  height: 410px;
   border: 2px dashed #e87f1e;
   border-radius: 50%;
   position: absolute;
@@ -224,17 +230,18 @@ button {
 .selected__dish__image {
   position: fixed;
   border-radius: 50%;
-  right: calc(30px + 560px / 2);
-  top: calc(100px + 560px / 2);
+  right: calc(30px + 160px / 2);
+  top: calc(70px + 480px / 2);
+  width: 200px;
 }
 
 .arrow__buttons {
-  width: 600px;
+  width: 330px;
   height: auto;
   display: flex;
   justify-content: space-between;
   position: fixed;
-  top: 560px;
+  top: 395px;
   right: 11%;
 }
 
@@ -247,6 +254,7 @@ button {
 
 .dish__info {
   width: 330px;
+  margin-top: 326px;
 }
 
 @media screen and (min-width: 1216px){
@@ -281,4 +289,67 @@ button {
     display: block;
   }
 
+}
+
+@media screen and (min-width: 1216px){
+  nav {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 30px;
+  }
+
+  .nav__title {
+    display: block;
+  }
+
+  .nav__links {
+    justify-content: center;
+    margin-right: 450px;
+  }
+
+  .nav__links li {
+    margin: 0 30px;
+  }
+
+  .nav__links-responsive {
+    display: flex;
+    padding: 0;
+  }
+
+  .nav__shopper {
+    margin-right: 0;
+  }
+
+  .nav__logo {
+    margin: 0;
+  }
+
+  .spinner__container {
+    right: -10%;
+    top: -85%;
+  }
+
+  .spinner__wheel {
+    width: 510px;
+    height: 510px;
+  }
+
+  .dish__info {
+    width: 330px;
+    margin-top: 0;
+  }
+
+  .selected__dish__image {
+    right: calc(30px + 560px / 2);
+    top: calc(100px + 560px / 2);
+    width: 300px;
+  }
+
+  .arrow__buttons {
+    width: 600px;
+    top: 560px;
+  } 
 }
