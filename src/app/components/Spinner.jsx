@@ -63,7 +63,7 @@ export default function Spinner({
 
   dishes.forEach((dish, i) => {
     const angle = (2 * Math.PI * i) / dishes.length;
-    const spinRadius = 250.0;
+    const spinRadius = window.innerWidth >= 1216 ? 250.0 : 200.0;
 
     newX = Math.cos(angle) * spinRadius;
     newY = -1.0 * Math.sin(angle) * spinRadius;
@@ -121,9 +121,16 @@ export default function Spinner({
   };
 
   const changeContent = (contentSelector) => {
-    selectedDishImg.style.right = "calc(30px + 560px / 2)";
-    selectedDishImg.style.top = "calc(100px + 560px / 2)";
-    
+    const isLargeScreen = window.innerWidth >= 1216;
+
+    if (isLargeScreen) {
+      selectedDishImg.style.right = "calc(30px + 560px / 2)";
+      selectedDishImg.style.top = "calc(100px + 560px / 2)";
+    } else {
+      selectedDishImg.style.right = "calc(30px + 160px / 2)";
+      selectedDishImg.style.top = "calc(70px + 480px / 2)";
+    }
+
     switch (contentSelector) {
       case 0:
       case 3:
@@ -200,7 +207,7 @@ export default function Spinner({
         name="selectedDishImg"
         src="/img/e9df498957f2d3c23586a9edad79c926-fotor-2024020713573.png"
         alt="Green Goddess Chicken Salad"
-        width="300"
+        /* width="300" */
       />
 
       <div className="arrow__buttons">
